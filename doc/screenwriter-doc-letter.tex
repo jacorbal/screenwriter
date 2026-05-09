@@ -1,5 +1,5 @@
 % Documentation text for `screenwriter-doc.tex', version 1.0.1
-% Paper size: A4
+% Paper size: letter
 % J. A. Corbal, 2026
 
 \documentclass[letter]{article}
@@ -436,7 +436,7 @@ Finally, to mark the end of the script:
 
 All language-dependent strings used by the \texttt{screenwriter} class
 are defined in separate language files named
-\verb|screenwriter-lang-⟨language⟩.ldf|. This keeps the core class code
+\verb|screenwriter-lang-⟨language⟩.ldf|.  This keeps the core class code
 independent of any particular language and makes it easy to add new
 languages or adjust existing ones.
 
@@ -473,7 +473,7 @@ A typical language file has the following structure:
 
 The file starts with a \verb|\ProvidesFile| declaration, followed by a
 series of \verb|\renewcommand*| statements that assign the language-
-specific strings to the internal macros used by the class. No packages
+specific strings to the internal macros used by the class.  No packages
 are loaded and no options are processed in these files; they only
 contain definitions.
 
@@ -503,7 +503,7 @@ each language file:
 
 In some cases, users may wish to keep a given language but customise the
 wording of one or two internal strings (for example, preferring ``SMASH
-CUT TO:'' instead of ``CUT TO:''). Since all language-dependent text is
+CUT TO:'' instead of ``CUT TO:'').  Since all language-dependent text is
 stored in macros, this can be done directly in the document preamble.
 
 For example, to change the ``FADE IN'' label while still using the
@@ -587,7 +587,7 @@ typesetting screenplays in \LaTeX{}.
 
 The present class updates and extends that work for current \LaTeX{}
 distributions, introduces modular language support, and refines several
-aspects of the layout and implementation. Any remaining mistakes or
+aspects of the layout and implementation.  Any remaining mistakes or
 omissions are the responsibility of the current maintainer.
 
 %}}}
