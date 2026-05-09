@@ -187,7 +187,7 @@ In a typical screenplay document:
   \item Transitions such as \verb|\fadein|, \verb|\fadeout|,
         \verb|\intercut| and \verb|\flashback| are used where needed.
   \item The script can end with \verb|\theend|, which inserts the
-        language-dependent ``THE END'' marker centred on the page.
+        language-dependent ``THE END'' marker centered on the page.
 \end{itemize}
 
 %}}}
@@ -319,8 +319,8 @@ Once these values are set, you can produce a cover page using:
       address block containing agent and author contact information.
       The page counter is reset to~1 afterwards.
   \item[] \verb|\nicholl|\quad  Produces a simpler title page variant
-      with just the title centred on the page and no address block.  The
-      page counter is also reset to~1.
+      with just the title centered on the page and no address block.
+      The page counter is also reset to~1.
 \end{description}
 
 \subsection{Sluglines (scene headings)}
@@ -390,7 +390,7 @@ dialogue blocks.
 Parenthetical remarks can also be inserted manually using:
 \begin{description}
   \item[] \verb|\paren{⟨text⟩}|\quad  Typesets a parenthetical remark in
-    a narrower column, typically centred under the character name and
+    a narrower column, typically centered under the character name and
     above the next line of dialogue.
 \end{description}
 
@@ -427,14 +427,14 @@ For on-screen textual titles, use the \verb|titleover| environment:
 Finally, to mark the end of the script:
 \begin{description}
   \item[] \verb|\theend|\quad  Typesets the language-specific ``THE
-    END'' (or equivalent) centred on the page.
+    END'' (or equivalent) centered on the page.
 \end{description}
 
 %}}}
 
 \section{Language files}%{{{
 
-All language-dependent strings used by the \texttt{screenwriter} class
+All language-dependent strings used by the \textsf{screenwriter} class
 are defined in separate language files named
 \verb|screenwriter-lang-⟨language⟩.ldf|.  This keeps the core class code
 independent of any particular language and makes it easy to add new
@@ -471,11 +471,11 @@ A typical language file has the following structure:
 \renewcommand*{\myslugspace}{ -- }
 \end{verbatim}
 
-The file starts with a \verb|\ProvidesFile| declaration, followed by a
-series of \verb|\renewcommand*| statements that assign the language-
-specific strings to the internal macros used by the class.  No packages
-are loaded and no options are processed in these files; they only
-contain definitions.
+The file starts with a \verb|\ProvidesFile| declaration, followed by
+a series of \verb|\renewcommand*| statements that assign the
+language-specific strings to the internal macros used by the class.  No
+packages are loaded and no options are processed in these files; they
+only contain definitions.
 
 The class expects the following macros to be defined (or redefined) by
 each language file:
@@ -512,7 +512,7 @@ English language file:
 \documentclass[english]{screenwriter}
 
 % custom wording for the opening transition
-\renewcommand*{\myfadeintext}{SMASH CUT IN}
+\renewcommand*{\fadeintext}{SMASH CUT IN}
 
 \begin{document}
     \fadein
@@ -526,7 +526,7 @@ Likewise, to adjust only the ``THE END'' marker in Spanish:
 \documentclass[spanish]{screenwriter}
 
 % use a different final marker
-\renewcommand*{\mythirtytext}{FIN DE LA OBRA}
+\renewcommand*{\thirtytext}{FIN DE LA OBRA}
 
 \begin{document}
     ...
@@ -547,18 +547,17 @@ To add support for a new language, you only need to:
     subdirectory, based on one of the existing language files.
   \item Provide appropriate translations for all \verb|\my...| macros.
   \item Optionally, define a class option in \texttt{screenwriter.cls}
-    so users can select the language explicitly, e.g.
+    so a new language can be selected explicitly, e.g.
 \begin{verbatim}
 \DeclareOption{⟨language⟩}{%
   \def\screenwriter@lang{⟨language⟩}%
-  \screenwriter@lang@explicittrue
-}
+  \screenwriter@lang@explicittrue}
 \end{verbatim}
 \end{enumerate}
 
 If no explicit class option is given, but the document uses
 \texttt{babel} and the current \verb|\languagename| matches the file
-name, \texttt{screenwriter} will automatically pick up the new language
+name, \textsf{screenwriter} will automatically pick up the new language
 file without further changes to the class.
 
 %}}}
