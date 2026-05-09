@@ -1,0 +1,597 @@
+% Documentation text for `screenwriter-doc.tex', version 1.0.1
+% Paper size: A4
+% J. A. Corbal, 2026
+
+\documentclass[letter]{article}
+
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+\hypersetup{
+    pdftitle = {The screenwriter class},
+    pdfauthor = {J. A. Corbal},
+    pdfsubject = {Documentation for the screenwriter LaTeX class},
+    pdfkeywords = {LaTeX, screenplay, screenwriter, class},
+    %pdfcreator = {LaTeX},
+}
+
+\newcommand{\meta}[1]{<\textit{#1}>}
+
+\title{The \textsf{screenwriter} class\thanks{This document was last
+    revised and validated on \today.}}
+
+\author{J.~A.~Corbal\thanks{\texttt{jacorbal [at] gmail [dot] com}}}
+
+\date{Version~1.0.1 --- 2026-05-09}
+
+
+\begin{document}%{{{
+
+\maketitle
+
+\begin{abstract}
+
+    The \textsf{screenwriter} class provides a LaTeX document class for
+    writing film and television screenplays.  It is based on John Pate's
+    \texttt{screenplay} class, updated for current LaTeX distributions
+    and extended with modular language support and better integration
+    with \texttt{babel}.
+
+\end{abstract}
+
+\section{Introduction}%{{{
+
+The \textsf{screenwriter} class is a \LaTeX{} document class designed to
+typeset film and television screenplays.  It provides the conventional
+screenplay layout (12\nobreak\thinspace pt monospaced type, specific
+margins, dialogue blocks, and sluglines) and a set of high-level
+commands tailored to the way screenwriters actually work.
+
+The class is based on John Pate's original \texttt{screenplay.cls}, but
+has been updated and extended for current \LaTeX{} systems.  In
+particular, it modernises package loading, separates language-specific
+text into dedicated language definition files, and offers better
+cooperation with the \texttt{babel} package.
+
+Unlike generic article or book classes, \textsf{screenwriter} focuses on
+the visual and structural conventions of screenplays: scene headings,
+dialogue layout, transitions such as ``FADE IN:'' and ``FADE OUT:'', and
+a standardised cover page.  The goal is to let authors concentrate on
+the script itself, while \LaTeX{} takes care of consistent formatting.
+
+The class is intended both for individual writers who like working with
+\LaTeX, and for production environments where reproducible layouts and
+multi-language support are important.
+
+%}}}
+
+\section{Installation}%{{{
+
+This section describes a typical local installation in a personal \TeX{}
+tree.  System-wide installation follows the same pattern, but requires
+administrator privileges.
+
+The distribution of \textsf{screenwriter} consists of the following
+types of files:
+
+\begin{itemize}\itemsep0em
+  \item \texttt{screenwriter.cls}: the main document class.
+  \item \texttt{screenwriter-lang-\meta{language}.ldf}: language
+        definition files containing all language-dependent strings used
+        by the class (e.g., ``FADE IN'', ``THE END'', ``INT.'', ``EXT.'').
+  \item \texttt{screenwriter-doc.tex} \& \texttt{screenwriter-doc.pdf}:
+        this documentation and its source.
+  \item \texttt{LICENSE}: license file (LPPL\,1.3c).
+  \item \texttt{README}: this file.
+\end{itemize}
+
+A typical \TeX{} directory structure might look like:
+
+\begin{verbatim}
+    screenwriter/
+      LICENSE
+      README
+      doc/
+        screenwriter-doc.tex
+        screenwriter-doc.pdf
+      tex/
+        latex/
+          screenwriter/
+            screenwriter.cls
+            lang/
+              screenwriter-lang-english.ldf
+              screenwriter-lang-spanish.ldf
+              ...
+\end{verbatim}
+
+For a local installation, copy the \texttt{tex/latex/screenwriter/}
+contents into your personal \TeX{} tree, for example:
+
+\begin{center}
+  \texttt{\$TEXMFHOME/tex/latex/screenwriter/}
+\end{center}
+where \texttt{\$TEXMFHOME} is usually \texttt{\~{}/texmf} on a standard
+\TeX{}~Live installation.  The language definition files can be placed
+in a \texttt{lang/} subdirectory as shown above; the class looks for
+them as \texttt{lang/screenwriter-lang-\meta{language}.ldf}.
+
+After copying the files, update your file name database if required by
+your distribution (for example by running \texttt{mktexlsr} on \TeX{}
+Live).  Once this is done, \LaTeX{} will be able to find the class and
+language files automatically, and you can use in any document:
+
+\begin{verbatim}
+    \documentclass{screenwriter}
+\end{verbatim}
+
+%}}}
+
+\section{Basic usage}%{{{
+
+This section shows a minimal example and explains the main elements that
+\textsf{screenwriter} provides out of the box.
+
+\subsection*{A minimal document}
+
+A very small English screenplay using the default layout might look as
+follows:
+
+\begin{verbatim}
+    \documentclass{screenwriter}
+
+    \title{My First Screenplay}
+    \author{Screenwriter Name}
+
+    \begin{document}
+        \coverpage
+
+        \fadein
+        \intslug[DAY]{OFFICE}
+
+        \begin{dialogue}{WRITER}
+            This is a line of dialogue.
+        \end{dialogue}
+
+        \theend
+    \end{document}
+\end{verbatim}
+
+The class sets up 12\nobreak\thinspace pt monospaced type, appropriate
+margins and dialogue widths, and a standard page style.  The example
+uses only a few of the commands provided, but already shows the typical
+structure: cover page, opening transition, first scene heading,
+dialogue, and a final ``THE END'' marker.
+
+\subsection*{Basic structure}
+
+In a typical screenplay document:
+
+\begin{itemize}
+  \item The preamble selects the class and language, using \\
+        \verb|\documentclass[⟨options⟩]{screenwriter}|, and provides
+        meta-data such as \verb|\title| and \verb|\author|.
+  \item The document body starts with \verb|\coverpage| or \verb|\nicholl|
+        to produce a title page.
+  \item Each scene begins with a slugline, such as \verb|\intslug| or
+        \verb|\extslug|.
+  \item Dialogue is set within the \verb|dialogue| environment, with
+        optional parentheticals and continuation marks handled by
+        \verb|\dialbreak|.
+  \item Transitions such as \verb|\fadein|, \verb|\fadeout|,
+        \verb|\intercut| and \verb|\flashback| are used where needed.
+  \item The script can end with \verb|\theend|, which inserts the
+        language-dependent ``THE END'' marker centred on the page.
+\end{itemize}
+
+%}}}
+
+\section{Options}%{{{
+
+The \textsf{screenwriter} class accepts a small set of options that
+control page layout, screenplay style, and language.
+
+\subsection{Paper and layout options}
+
+The class internally loads the standard \texttt{article} class with
+12\nobreak\thinspace pt, one-column, one-sided settings, and then
+adjusts margins and text width to match common screenplay practice.
+
+Two paper size options are available:
+\begin{description}
+  \item[\texttt{letterpaper}] Use US Letter paper (default).  This is
+      the usual choice for North American markets.
+  \item[\texttt{a4paper}] Use A4 paper and adjust the text and dialogue
+      widths accordingly.  This is often more convenient for European
+      printers and readers.
+\end{description}
+
+The screenplay style can be selected with:
+\begin{description}
+  \item[\texttt{literary}] Literary (spec) screenplay style.  Scene
+        headings (sluglines) are printed without scene numbers.  This is
+        the default.
+  \item[\texttt{technical}] Technical (numbered) style.  Each scene
+        heading is automatically numbered, and the scene number is
+        printed in the margins.  This is useful in production and
+        shooting scripts.
+\end{description}
+
+Examples:
+\begin{verbatim}
+    \documentclass[a4paper]{screenwriter}
+    \documentclass[letterpaper,technical]{screenwriter}
+\end{verbatim}
+
+\subsection{Language options}
+
+The class separates language-dependent strings (such as ``FADE IN'',
+``THE END'', ``INT.'', ``EXT.'', ``TITLE OVER'', etc.) into external
+language definition files \verb|screenwriter-lang-⟨language⟩.ldf|.  The
+language used by the class can be selected in two ways.
+
+\subsubsection*{Explicit language selection}
+
+You can explicitly choose the language via class options.  The following
+languages are currently provided\footnote{The language files should
+undergo a formal review to ensure accuracy and consistency.}:
+\begin{center}
+
+    \texttt{english}, \texttt{spanish}, \texttt{french},
+    \texttt{german}, \texttt{italian}, \\
+    \texttt{portuguese}, \texttt{galician}, \texttt{catalan},
+    \texttt{esperanto}
+
+\end{center}
+
+For example:
+\begin{verbatim}
+    \documentclass[spanish]{screenwriter}
+\end{verbatim}
+tells the class to use Spanish strings and to therefore load the
+language file \verb|lang/screenwriter-lang-spanish.ldf|, regardless of
+whether the document uses \texttt{babel} or not.
+
+\subsubsection*{Cooperation with \texttt{babel}}
+
+If no explicit language option is given to \textsf{screenwriter}, but
+the user loads \texttt{babel} with a language, the class will attempt to
+detect the current \texttt{babel} language via \verb|\languagename| at
+\verb|\begin{document}|.  It then tries to load the corresponding
+language file:
+\begin{verbatim}
+    \documentclass{screenwriter}
+    \usepackage[french]{babel}
+\end{verbatim}
+
+In this case, the class will look for
+\verb|lang/screenwriter-lang-french.ldf| and use French strings for all
+its internal labels.  If no matching language file is found, the class
+falls back to English.
+
+\paragraph{Note.}  The class \textsf{screenwriter} does \emph{not} load
+\texttt{babel} on its own; users are free to choose \texttt{babel},
+\texttt{polyglossia}, or no multilingual package at all.  The class only
+mirrors the active language when possible.
+
+%}}}
+
+\section{Commands}%{{{
+
+This section summarises the main commands and environments provided by
+the \textsf{screenwriter} class.  They are grouped by function: title
+and address information, sluglines (scene headings), dialogue, and
+transitions.
+
+\subsection{Title and cover page}
+
+The class reuses the standard \LaTeX{} meta-data commands
+\verb|\title| and \verb|\author|, and adds a few macros specific to
+screenplays.
+
+\begin{description}
+  \item[] \verb|\title{<title>}|\quad  Sets the script title.  This is
+    used on the cover page and may also appear on the first page of the
+    script.
+  \item[] \verb|\author{<name>}|\quad  Sets the author name shown
+    beneath the title.
+  \item[]\verb|\realauthor{<name>}|\quad  Sets the real author name,
+    as printed in the address block on the cover when \verb|\author|
+    refers to a pseudonym.  By default, this is the same as
+    \verb|\author|.
+  \item[]\verb|\address{<text>}|\quad  Sets the contact address that
+    appears in the cover page address block.  The default is a generic
+    ``Contact via Agency'' (or its language-dependent equivalent).
+  \item[]\verb|\agent{<text>}|\quad  Sets the agent information for the
+    cover page.  By default, this is left empty.
+\end{description}
+
+Once these values are set, you can produce a cover page using:
+\begin{description}
+  \item[] \verb|\coverpage|\quad  Typesets a standard cover page: title
+      in uppercase, ``by'' (or its translation) and author name, and an
+      address block containing agent and author contact information.
+      The page counter is reset to~1 afterwards.
+  \item[] \verb|\nicholl|\quad  Produces a simpler title page variant
+      with just the title centred on the page and no address block.  The
+      page counter is also reset to~1.
+\end{description}
+
+\subsection{Sluglines (scene headings)}
+
+Sluglines mark the beginning of scenes, typically with ``INT.'' or
+``EXT.'', the location, and time of day.  The class offers commands that
+build upon the language-dependent abbreviations defined in the language
+files.
+\begin{description}
+  \item[] \verb|\intslug[⟨qualifier⟩]{⟨location⟩}|\quad  Interior
+    slugline.  The class prints the language-specific ``INT''
+    abbreviation, followed by the location and any qualifier (such as
+    ``DAY'', ``NIGHT'').  The optional \verb|⟨qualifier⟩| argument is
+    placed at the end of the slugline, separated by a symbol, usually
+    a dash.
+  \item[] \verb|\extslug[⟨qualifier⟩]{⟨location⟩}|\quad  Exterior
+    slugline.  As above, but using the ``EXT'' abbreviation.
+  \item[] \verb|\intextslug[⟨qualifier⟩]{⟨location⟩}|\quad  Combined
+    interior/exterior slugline (``INT./EXT.''), useful for scenes that
+    move between inside and outside.
+  \item[] \verb|\extintslug[⟨qualifier⟩]{⟨location⟩}|\quad  Combined
+    exterior/interior slugline (``EXT./INT.'').
+\end{description}
+
+In \texttt{literary} mode, sluglines are printed without scene numbers.
+In \texttt{technical} mode, each slugline increments an internal scene
+counter and prints the scene number in the margins.
+
+A typical usage might be:
+\begin{verbatim}
+    \intslug{OFFICE -- DAY}
+    \extslug[NIGHT]{STREET}
+\end{verbatim}
+
+\subsection{Dialogue}
+
+Dialogue is set using a dedicated environment which handles character
+names, optional parenthetical remarks, and the width and indentation of
+dialogue blocks.
+
+\begin{description}
+  \item[] \verb|\begin{dialogue}[⟨paren⟩]{⟨CHARACTER⟩} ... \end{dialogue}|\quad
+    Starts a dialogue block for the given character name.  The character
+    name is printed in uppercase at the standard dialogue position.  The
+    optional \verb|⟨paren⟩| argument allows you to add a parenthetical
+    remark (such as ``whispering''), which is typeset in parentheses
+    above the dialogue text.
+
+    Example:
+\begin{verbatim}
+    \begin{dialogue}[whispering]{WRITER}
+        This is a whispered line.
+    \end{dialogue}
+\end{verbatim}
+
+  \item[] \verb|\dialbreak[⟨paren⟩]{⟨CHARACTER⟩}|\quad  Ends the current
+    \verb|dialogue| environment with a ``(MORE)'' marker, starts a new
+    page, and opens a new dialogue block for the same character,
+    labelled with a continuation marker (typically ``(CONT'D)'' or its
+    translation).  The optional \verb|⟨paren⟩| argument works as for
+    \verb|dialogue|.
+
+    This is useful when a character's speech continues across a page
+    break in the final layout.
+\end{description}
+
+Parenthetical remarks can also be inserted manually using:
+\begin{description}
+  \item[] \verb|\paren{⟨text⟩}|\quad  Typesets a parenthetical remark in
+    a narrower column, typically centred under the character name and
+    above the next line of dialogue.
+\end{description}
+
+\subsection{Transitions and labels}
+
+The class provides a number of commands for common transitions and
+on-screen text labels.  Their exact spelling and punctuation are
+language-dependent and defined in the language files.
+\begin{description}
+  \item[] \verb|\fadein|\quad  Inserts the language-specific ``FADE
+    IN:'' label followed by a vertical skip.  This is typically used at
+    the beginning of the script.
+  \item[] \verb|\fadeout|\quad  Inserts the language-specific ``FADE
+    OUT:'' label (or its equivalent), usually aligned to the right in
+    the standard transition position.
+  \item[] \verb|\intercut|\quad  Inserts an ``INTERCUT WITH:'' label,
+    usually flush right, to indicate intercutting between locations.
+  \item[] \verb|\flashback|\quad  Inserts a ``FLASHBACK TO:'' label (or
+    equivalent), again in the standard transition position.
+\end{description}
+
+For on-screen textual titles, use the \verb|titleover| environment:
+\begin{description}
+  \item[] \verb|\begin{titleover}[⟨qualifier⟩] ... \end{titleover}|\quad
+    Starts a ``TITLE OVER:'' block.  The optional \verb|⟨qualifier⟩|
+    argument allows additional specification (for example, a location or
+    person).  The body of the environment is typeset as the on-screen
+    text.
+
+    Within this environment, \verb|\titbreak| can be used to mark a
+    break to the next page while indicating that the title continues.
+\end{description}
+
+Finally, to mark the end of the script:
+\begin{description}
+  \item[] \verb|\theend|\quad  Typesets the language-specific ``THE
+    END'' (or equivalent) centred on the page.
+\end{description}
+
+%}}}
+
+\section{Language files}%{{{
+
+All language-dependent strings used by the \texttt{screenwriter} class
+are defined in separate language files named
+\verb|screenwriter-lang-⟨language⟩.ldf|. This keeps the core class code
+independent of any particular language and makes it easy to add new
+languages or adjust existing ones.
+
+\subsection*{Structure of a language file}
+
+A typical language file has the following structure:
+
+\begin{verbatim}
+\ProvidesFile{screenwriter-lang-spanish.ldf}[2026/05/09 v0.1 Spanish]
+
+\renewcommand*{\myaddresstext}{Agencia de contacto}
+\renewcommand*{\mymoretext}{(M\'AS)}
+\renewcommand*{\mycontdtext}{(CONT.)}
+\renewcommand*{\myoffscreentext}{(F.P.)}
+\renewcommand*{\myvoiceovertext}{(\emph{OFF})}
+\renewcommand*{\myfadeintext}{ABRE DE NEGRO}
+\renewcommand*{\myfadeouttext}{FUNDE A NEGRO}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
+\renewcommand*{\mypunctcharA}{:}
+\renewcommand*{\mypunctcharB}{.}
+\renewcommand*{\myplacesep}{.~}
+\renewcommand*{\mysepintext}{./}
+\renewcommand*{\mybytext}{por}
+\renewcommand*{\myinttext}{INT}
+\renewcommand*{\myexttext}{EXT}
+\renewcommand*{\mytitleovertext}{R\'OTULO}
+\renewcommand*{\myintercuttext}{CORTE A}
+\renewcommand*{\myflashbacktext}{ANALEPSIS A}
+\renewcommand*{\mypovtext}{P.D.V.}
+\renewcommand*{\myreverttext}{REGRESO DE \pov}
+\renewcommand*{\mythirtytext}{FIN}
+\renewcommand*{\myslugspace}{ -- }
+\end{verbatim}
+
+The file starts with a \verb|\ProvidesFile| declaration, followed by a
+series of \verb|\renewcommand*| statements that assign the language-
+specific strings to the internal macros used by the class. No packages
+are loaded and no options are processed in these files; they only
+contain definitions.
+
+The class expects the following macros to be defined (or redefined) by
+each language file:
+\begin{itemize}
+  \item Cover and address strings:\\
+    \verb|\myaddresstext|, \verb|\mybytext|.
+  \item Dialogue markers:\\
+    \verb|\mymoretext|, \verb|\mycontdtext|,
+    \verb|\myoffscreentext|, \verb|\myvoiceovertext|,
+    \verb|\myadlibtext|.
+  \item Transitions and labels:\\
+    \verb|\myfadeintext|, \verb|\myfadeouttext|,
+    \verb|\mytitleovertext|, \verb|\myintercuttext|,
+    \verb|\myflashbacktext|.
+  \item Scene heading components:\\
+    \verb|\myinttext|, \verb|\myexttext|,
+    \verb|\myplacesep|, \verb|\mysepintext|,
+    \verb|\myslugspace|.
+  \item Other:\\
+    \verb|\mypovtext|, \verb|\myreverttext|,
+    \verb|\mythirtytext|.
+\end{itemize}
+
+\subsection*{Customizing individual strings}
+
+In some cases, users may wish to keep a given language but customise the
+wording of one or two internal strings (for example, preferring ``SMASH
+CUT TO:'' instead of ``CUT TO:''). Since all language-dependent text is
+stored in macros, this can be done directly in the document preamble.
+
+For example, to change the ``FADE IN'' label while still using the
+English language file:
+\begin{verbatim}
+\documentclass[english]{screenwriter}
+
+% custom wording for the opening transition
+\renewcommand*{\myfadeintext}{SMASH CUT IN}
+
+\begin{document}
+    \fadein
+    ...
+\end{document}
+\end{verbatim}
+
+Likewise, to adjust only the ``THE END'' marker in Spanish:
+
+\begin{verbatim}
+\documentclass[spanish]{screenwriter}
+
+% use a different final marker
+\renewcommand*{\mythirtytext}{FIN DE LA OBRA}
+
+\begin{document}
+    ...
+    \theend
+\end{document}
+\end{verbatim}
+
+When using \texttt{babel}, these customisations should be placed in the
+preamble \emph{after} loading the class and any multilingual packages,
+so that they override the values set by the language definition file.
+
+\subsection*{Adding a new language}
+
+To add support for a new language, you only need to:
+\begin{enumerate}
+  \item Create a new file
+    \verb|screenwriter-lang-⟨language⟩.ldf| in the \texttt{lang/}
+    subdirectory, based on one of the existing language files.
+  \item Provide appropriate translations for all \verb|\my...| macros.
+  \item Optionally, define a class option in \texttt{screenwriter.cls}
+    so users can select the language explicitly, e.g.
+\begin{verbatim}
+\DeclareOption{⟨language⟩}{%
+  \def\screenwriter@lang{⟨language⟩}%
+  \screenwriter@lang@explicittrue
+}
+\end{verbatim}
+\end{enumerate}
+
+If no explicit class option is given, but the document uses
+\texttt{babel} and the current \verb|\languagename| matches the file
+name, \texttt{screenwriter} will automatically pick up the new language
+file without further changes to the class.
+
+%}}}
+
+\section{License and credits}%{{{
+
+% LPPL, agradecimiento a John Pate, etc.
+This work may be distributed and/or modified under the conditions of the
+\emph{\LaTeX{} Project Public License} (LPPL), either version~1.3c of
+this license or (at your option) any later version.
+
+The latest version of the LPPL is available at:
+\begin{center}
+  \url{https://www.latex-project.org/lppl.txt}
+\end{center}
+
+\noindent
+Feedback, bug reports, and suggestions for new language files are very
+welcome.
+
+\subsection*{Credits}
+
+The design of \textsf{screenwriter} is based on John Pate's original
+\texttt{screenplay} class, which provided an early solution for
+typesetting screenplays in \LaTeX{}.
+
+The present class updates and extends that work for current \LaTeX{}
+distributions, introduces modular language support, and refines several
+aspects of the layout and implementation. Any remaining mistakes or
+omissions are the responsibility of the current maintainer.
+
+%}}}
+
+\end{document}
+
+%}}}

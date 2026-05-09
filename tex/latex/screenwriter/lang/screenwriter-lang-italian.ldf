@@ -1,0 +1,24 @@
+\ProvidesFile{screenwriter-lang-italian.ldf}[2026/05/09 v0.1 Italian texts]
+
+\renewcommand*{\myaddresstext}{Contatto tramite agenzia}
+\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\mybytext}{di}
+\renewcommand*{\mycontdtext}{(CONT.)}
+\renewcommand*{\myexttext}{EXT}
+\renewcommand*{\myfadeintext}{DISSOLVENZA IN APERTURA}
+\renewcommand*{\myfadeouttext}{DISSOLVENZA IN NERO}
+\renewcommand*{\myflashbacktext}{FLASHBACK A}
+\renewcommand*{\myintercuttext}{MONTAGGIO ALTERNATO CON}
+\renewcommand*{\myinttext}{INT}
+\renewcommand*{\mymoretext}{(SEGUE)}
+\renewcommand*{\myoffscreentext}{(F.C.)}% fuori campo
+\renewcommand*{\myplacesep}{.~}
+\renewcommand*{\mypovtext}{P.D.V.}
+\renewcommand*{\mypunctcharA}{:}
+\renewcommand*{\mypunctcharB}{:}
+\renewcommand*{\myreverttext}{RITORNO AL \pov}
+\renewcommand*{\mysepintext}{./}
+\renewcommand*{\myslugspace}{ -- }
+\renewcommand*{\mythirtytext}{FINE}
+\renewcommand*{\mytitleovertext}{TITOLO}
+\renewcommand*{\myvoiceovertext}{(V.O.)}% voce fuori campo

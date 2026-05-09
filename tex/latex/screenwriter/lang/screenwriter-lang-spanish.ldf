@@ -1,0 +1,24 @@
+\ProvidesFile{screenwriter-lang-spanish.ldf}[2026/05/09 v0.1 Spanish texts]
+
+\renewcommand*{\myaddresstext}{Agencia de contacto}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
+\renewcommand*{\mybytext}{por}
+\renewcommand*{\mycontdtext}{(CONT.)}
+\renewcommand*{\myexttext}{EXT}
+\renewcommand*{\myfadeintext}{ABRE DE NEGRO}
+\renewcommand*{\myfadeouttext}{FUNDE A NEGRO}
+\renewcommand*{\myflashbacktext}{ANALEPSIS A}
+\renewcommand*{\myintercuttext}{CORTE A}
+\renewcommand*{\myinttext}{INT}
+\renewcommand*{\mymoretext}{(M\'AS)}
+\renewcommand*{\myoffscreentext}{(F.P.)}
+\renewcommand*{\myplacesep}{.~}
+\renewcommand*{\mypovtext}{P.D.V.}
+\renewcommand*{\mypunctcharA}{:}
+\renewcommand*{\mypunctcharB}{.}
+\renewcommand*{\myreverttext}{REGRESO DE \pov}
+\renewcommand*{\mysepintext}{./}
+\renewcommand*{\myslugspace}{ -- }
+\renewcommand*{\mythirtytext}{FIN}
+\renewcommand*{\mytitleovertext}{R\'OTULO}
+\renewcommand*{\myvoiceovertext}{(\emph{OFF})}
