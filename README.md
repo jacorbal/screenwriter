@@ -38,21 +38,21 @@ Files
 The distribution typically contains:
 
   - The main class file:
-    - `screenwriter.cls`  
+    - `screenwriter.cls`
 
   - Language definition files providing localized versions of all
   internal strings used by the class (e.g., “FADE IN”, “THE END”,
   “TITLE OVER”, “(O.S.)”, &c.):
 
-    - `screenwriter-lang-english.ldf`  
-    - `screenwriter-lang-catalan.ldf`  
-    - `screenwriter-lang-esperanto.ldf`  
-    - `screenwriter-lang-french.ldf`  
-    - `screenwriter-lang-galician.ldf`  
-    - `screenwriter-lang-german.ldf`  
-    - `screenwriter-lang-italian.ldf`  
-    - `screenwriter-lang-portuguese.ldf`  
-    - `screenwriter-lang-spanish.ldf`  
+    - `screenwriter-lang-english.ldf`
+    - `screenwriter-lang-catalan.ldf`
+    - `screenwriter-lang-esperanto.ldf`
+    - `screenwriter-lang-french.ldf`
+    - `screenwriter-lang-galician.ldf`
+    - `screenwriter-lang-german.ldf`
+    - `screenwriter-lang-italian.ldf`
+    - `screenwriter-lang-portuguese.ldf`
+    - `screenwriter-lang-spanish.ldf`
 
   - User documentation and examples:
     - `screenwriter-doc-a4.tex`
@@ -66,7 +66,7 @@ The distribution typically contains:
     - `LICENSE`
 
   - This file:
-    - `README`  
+    - `README`
 
 Installation
 ------------
@@ -203,35 +203,35 @@ screenplays:
 
 - Cover and title
 
-  - `\coverpage`  
+  - `\coverpage`
       Produce a standard cover page with title, author, and contact
       information.
 
-  - `\nicholl`  
+  - `\nicholl`
       Alternative simple title page variant.
 
-  - `\title{...}`, `\author{...}`  
+  - `\title{...}`, `\author{...}`
       Standard LaTeX macros reused by the class.
 
-  - `\realauthor{...}`  
+  - `\realauthor{...}`
       Set the real author name for the cover in case that `\author` is
       a pseudonym, or a shorter version of the name.
 
-  - `\address{...}`, `\agent{...}`  
+  - `\address{...}`, `\agent{...}`
       Provide address and agent information for the cover page.
 
 - Sluglines
 
-  - `\intslug[QUALIFIER]{LOCATION}`  
+  - `\intslug[QUALIFIER]{LOCATION}`
       Interior slugline (INT.).
 
-  - `\extslug[QUALIFIER]{LOCATION}`  
+  - `\extslug[QUALIFIER]{LOCATION}`
       Exterior slugline (EXT.).
 
-  - `\intextslug[QUALIFIER]{LOCATION}`  
+  - `\intextslug[QUALIFIER]{LOCATION}`
       Combined interior/exterior slugline (INT./EXT.).
 
-  - `\extintslug[QUALIFIER]{LOCATION}`  
+  - `\extintslug[QUALIFIER]{LOCATION}`
       Combined exterior/interior slugline (EXT./INT.).
 
   The exact abbreviations and punctuation are language-dependent and
@@ -239,29 +239,29 @@ screenplays:
 
 - Dialogue
 
-  - Environment `dialogue[paren]{CHARACTER}`  
+  - Environment `dialogue[paren]{CHARACTER}`
       Typesets character name and dialogue in the standard screenplay
       layout.  An optional parenthetical can be provided in the optional
       argument.
 
-  - `\dialbreak[paren]{CHARACTER}`  
+  - `\dialbreak[paren]{CHARACTER}`
       Ends the current dialogue block with a “(MORE)” marker, starts
       a new page, and continues the same character's dialogue marked as
       “(CONT'D)”.
 
 - Transitions and labels
 
-  - `\fadein`, `\fadeout`  
+  - `\fadein`, `\fadeout`
       Insert “FADE IN:” and “FADE OUT:” (or their localized versions).
 
-  - `\intercut`, `\flashback`  
+  - `\intercut`, `\flashback`, `\flashforward`
       Insert transition labels such as “INTERCUT WITH:” and
       “FLASHBACK TO:”.
 
-  - `\titleover` environment  
+  - `\titleover` environment
       For “TITLE OVER:” blocks (such as on-screen text).
 
-  - `\theend`  
+  - `\theend`
       Typesets the final “THE END” (or localized equivalent) centered.
 
 For detailed examples and spacing behaviour, see the accompanying
