@@ -1,13 +1,14 @@
-\ProvidesFile{screenwriter-lang-italian.ldf}[2026/05/09 v0.1 Italian texts]
+\ProvidesFile{screenwriter-lang-italian.ldf}[2026/05/10 v1.0 Italian texts]
 
 \renewcommand*{\myaddresstext}{Contatto tramite agenzia}
-\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
 \renewcommand*{\mybytext}{di}
 \renewcommand*{\mycontdtext}{(CONT.)}
 \renewcommand*{\myexttext}{EXT}
 \renewcommand*{\myfadeintext}{DISSOLVENZA IN APERTURA}
 \renewcommand*{\myfadeouttext}{DISSOLVENZA IN NERO}
-\renewcommand*{\myflashbacktext}{FLASHBACK A}
+\renewcommand*{\myflashbacktext}{ANALESSI A}
+\renewcommand*{\myflashforwardtext}{PROLESSI A}
 \renewcommand*{\myintercuttext}{MONTAGGIO ALTERNATO CON}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(SEGUE)}

@@ -2,8 +2,8 @@
 =======================================================
 
   - **Author:** J. A. Corbal (jacorbal [at] gmail [dot] com)
-  - **Last update:** Sun May 10 13:21:05 UTC 2026
-  - **Version:**  1.0.2
+  - **Last update:** Sun May 10 20:02:45 UTC 2026
+  - **Version:**  1.0.3
 
 License
 -------

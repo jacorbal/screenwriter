@@ -1,4 +1,4 @@
-\ProvidesFile{screenwriter-lang-spanish.ldf}[2026/05/09 v0.1 Spanish texts]
+\ProvidesFile{screenwriter-lang-spanish.ldf}[2026/05/10 v1.0 Spanish texts]
 
 \renewcommand*{\myaddresstext}{Agencia de contacto}
 \renewcommand*{\myadlibtext}{\emph{ad~lib.}}
@@ -6,8 +6,9 @@
 \renewcommand*{\mycontdtext}{(CONT.)}
 \renewcommand*{\myexttext}{EXT}
 \renewcommand*{\myfadeintext}{ABRE DE NEGRO}
-\renewcommand*{\myfadeouttext}{FUNDE A NEGRO}
+\renewcommand*{\myfadeouttext}{FUNDIDO A NEGRO}
 \renewcommand*{\myflashbacktext}{ANALEPSIS A}
+\renewcommand*{\myflashforwardtext}{PROLEPSIS A}
 \renewcommand*{\myintercuttext}{CORTE A}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(M\'AS)}

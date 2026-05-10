@@ -1,17 +1,18 @@
-\ProvidesFile{screenwriter-lang-german.ldf}[2026/05/09 v0.1 German texts]
+\ProvidesFile{screenwriter-lang-german.ldf}[2026/05/10 v1.0 German texts]
 
 \renewcommand*{\myaddresstext}{Kontakt {\"u}ber Agentur}
 \renewcommand*{\myadlibtext}{ad~lib.}
 \renewcommand*{\mybytext}{von}
 \renewcommand*{\mycontdtext}{(FORTS.)}
 \renewcommand*{\myexttext}{EXT}
-\renewcommand*{\myfadeintext}{AUFBLENDE}
+\renewcommand*{\myfadeintext}{AUFBLENDE AUS SCHWARZ}
 \renewcommand*{\myfadeouttext}{ABBLENDE AUF SCHWARZ}
 \renewcommand*{\myflashbacktext}{R{\"U}CKBLENDE NACH}
+\renewcommand*{\myflashforwardtext}{VORAUSBLENDE AUF}
 \renewcommand*{\myintercuttext}{GEGENSCHNITT MIT}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(MEHR)}
-\renewcommand*{\myoffscreentext}{(A.O.)}% außerhalb des Off/außerhalb des Bildes
+\renewcommand*{\myoffscreentext}{(A.B.)}% außerhalb des Off/außerhalb des Bildes
 \renewcommand*{\myplacesep}{.~}
 \renewcommand*{\mypovtext}{P.O.V.}
 \renewcommand*{\mypunctcharA}{:}

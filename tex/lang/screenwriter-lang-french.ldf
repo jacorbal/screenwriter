@@ -1,4 +1,4 @@
-\ProvidesFile{screenwriter-lang-french.ldf}[2026/05/09 v0.1 French texts]
+\ProvidesFile{screenwriter-lang-french.ldf}[2026/05/10 v1.0 French texts]
 
 \renewcommand*{\myaddresstext}{Contact par l'agence}
 \renewcommand*{\myadlibtext}{ad~lib.}
@@ -7,11 +7,12 @@
 \renewcommand*{\myexttext}{EXT}
 \renewcommand*{\myfadeintext}{FONDU D'OUVERTURE}
 \renewcommand*{\myfadeouttext}{FONDU AU NOIR}
-\renewcommand*{\myflashbacktext}{FLASHBACK VERS}
+\renewcommand*{\myflashbacktext}{ANALEPSE VERS}
+\renewcommand*{\myflashforwardtext}{PROLEPSE VERS}
 \renewcommand*{\myintercuttext}{INTERCUT AVEC}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(SUITE)}
-\renewcommand*{\myoffscreentext}{(HORS CHAMP)}
+\renewcommand*{\myoffscreentext}{(H.C.)}% hors champ
 \renewcommand*{\myplacesep}{.~}
 \renewcommand*{\mypovtext}{P.D.V.}
 \renewcommand*{\mypunctcharA}{:}

@@ -1,4 +1,4 @@
-% Documentation text for `screenwriter-doc.tex', version 1.0.2
+% Documentation text for `screenwriter-doc.tex', version 1.0.3
 % Paper size: A4
 % J. A. Corbal, 2026
 
@@ -29,7 +29,7 @@
 
 \author{J.~A.~Corbal\thanks{\texttt{jacorbal [at] gmail [dot] com}}}
 
-\date{Version~1.0.2 --- 2026-05-10}
+\date{Version~1.0.3 --- 2026-05-10}
 
 
 \begin{document}%{{{
@@ -173,19 +173,21 @@ In a typical screenplay document:
 
 \begin{itemize}
   \item The preamble selects the class and language, using \\
-        \verb|\documentclass[⟨options⟩]{screenwriter}|, and provides
-        meta-data such as \verb|\title| and \verb|\author|.
+    \verb|\documentclass[⟨options⟩]{screenwriter}|, and provides
+    meta-data such as \verb|\title| and \verb|\author|.
   \item The document body starts with \verb|\coverpage| or \verb|\nicholl|
-        to produce a title page.
+    to produce a title page.
   \item Each scene begins with a slugline, such as \verb|\intslug| or
-        \verb|\extslug|.
+    \verb|\extslug|.
   \item Dialogue is set within the \verb|dialogue| environment, with
-        optional parentheticals and continuation marks handled by
-        \verb|\dialbreak|.
+    optional parentheticals and continuation marks handled by
+    \verb|\dialbreak|.
   \item Transitions such as \verb|\fadein|, \verb|\fadeout|,
-        \verb|\intercut| and \verb|\flashback| are used where needed.
-  \item The script can end with \verb|\theend|, which inserts the
-        language-dependent ``THE END'' marker centered on the page.
+    \verb|\intercut|, \verb|\flashback| and \verb|\flashforward| are
+    used where needed.
+  \item The script can end with
+    \verb|\theend|, which inserts the language-dependent ``THE END''
+    marker centered on the page.
 \end{itemize}
 
 %}}}
@@ -408,6 +410,8 @@ language-dependent and defined in the language files.
     usually flush right, to indicate intercutting between locations.
   \item[] \verb|\flashback|\quad  Inserts a ``FLASHBACK TO:'' label (or
     equivalent), again in the standard transition position.
+  \item[] \verb|\flashforward|\quad  Inserts a ``FLASHFORWARD TO:''
+    label (or equivalent), again in the standard transition position.
 \end{description}
 
 For on-screen textual titles, use the \verb|titleover| environment:
@@ -463,6 +467,7 @@ A typical language file has the following structure:
 \renewcommand*{\mytitleovertext}{R\'OTULO}
 \renewcommand*{\myintercuttext}{CORTE A}
 \renewcommand*{\myflashbacktext}{ANALEPSIS A}
+\renewcommand*{\myflashforwardtext}{PROLEPSIS A}
 \renewcommand*{\mypovtext}{P.D.V.}
 \renewcommand*{\myreverttext}{REGRESO DE \pov}
 \renewcommand*{\mythirtytext}{FIN}
@@ -487,7 +492,7 @@ each language file:
   \item Transitions and labels:\\
     \verb|\myfadeintext|, \verb|\myfadeouttext|,
     \verb|\mytitleovertext|, \verb|\myintercuttext|,
-    \verb|\myflashbacktext|.
+    \verb|\myflashbacktext|, \verb|\myflashforwardtext|.
   \item Scene heading components:\\
     \verb|\myinttext|, \verb|\myexttext|,
     \verb|\myplacesep|, \verb|\mysepintext|,

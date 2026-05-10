@@ -1,13 +1,14 @@
-\ProvidesFile{screenwriter-lang-catalan.ldf}[2026/05/09 v0.1 Catalan texts]
+\ProvidesFile{screenwriter-lang-catalan.ldf}[2026/05/10 v1.0 Catalan texts]
 
 \renewcommand*{\myaddresstext}{Contacte a través de l'agència}
-\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
 \renewcommand*{\mybytext}{per}
 \renewcommand*{\mycontdtext}{(CONT.)}
 \renewcommand*{\myexttext}{EXT}
-\renewcommand*{\myfadeintext}{OBRE DE NEGRE}
-\renewcommand*{\myfadeouttext}{FUNDEIX A NEGRE}
-\renewcommand*{\myflashbacktext}{FLASHBACK A}
+\renewcommand*{\myfadeintext}{OBRE A NEGRE}
+\renewcommand*{\myfadeouttext}{FOSSA A NEGRE}
+\renewcommand*{\myflashbacktext}{ANALEPSI A}
+\renewcommand*{\myflashforwardtext}{PROLEPSI A}
 \renewcommand*{\myintercuttext}{TALL AMB}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(M\'ES)}

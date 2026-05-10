@@ -1,10 +1,16 @@
 CHANGELOG
 =========
 
+## Version 1.0.3 -- Sun May 10 19:32:34 UTC 2026
+
+  - Fix language strings
+  - Add command `\flashforward` for symmetry with `\flashback`
+  - Update documentation
+
 ## Version 1.0.2 -- Sun May 10 13:21:05 UTC 2026
 
   - Fix margin values
-  - Fix permissions of files (0644) and directories (0755)
+  - Fix permissions of files (`0644`) and directories (`0755`)
   - Add new sample files
   - Fix typos in documentation
 
@@ -16,8 +22,8 @@ CHANGELOG
 
 ## Version 1.0.0 -- Sat Sep 14 12:14:55 UTC 2013
 
-  - Support for languages (hardcoded)
-  - Fix strings
+  - Support for languages (hard-coded)
+  - Fix language strings
 
 ## Version 0.1.0 -- Fri Sep 13 12:03:51 UTC 2013
 

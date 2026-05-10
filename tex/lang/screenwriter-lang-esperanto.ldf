@@ -1,17 +1,18 @@
-\ProvidesFile{screenwriter-lang-esperanto.ldf}[2026/05/09 v0.1 Esperanto texts]
+\ProvidesFile{screenwriter-lang-esperanto.ldf}[2026/05/10 v1.0 Esperanto texts]
 
 \renewcommand*{\myaddresstext}{Kontakto per agentejo}
-\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
 \renewcommand*{\mybytext}{de}
-\renewcommand*{\mycontdtext}{(DAŬR.)}
+\renewcommand*{\mycontdtext}{(DA{\uU}R.)}
 \renewcommand*{\myexttext}{EKE}
-\renewcommand*{\myfadeintext}{MALKLARI\^GO AL ENE}
-\renewcommand*{\myfadeouttext}{MALKLARI\^GO AL NIGRE}
-\renewcommand*{\myflashbacktext}{RETROREMEMORO AL}
+\renewcommand*{\myfadeintext}{APERAS EL NIGRO}
+\renewcommand*{\myfadeouttext}{MALAPERAS EN NIGRON}
+\renewcommand*{\myflashbacktext}{PROLEPSO AL}% Retromemoro al
+\renewcommand*{\myflashforwardtext}{ANALEPSO AL}% Antaŭmemoro al
 \renewcommand*{\myintercuttext}{INTERTRAN\^CO KUN}
 \renewcommand*{\myinttext}{ENE}
 \renewcommand*{\mymoretext}{(DA{\uU}RAS)}
-\renewcommand*{\myoffscreentext}{(MALVIDE)}% ekster kadro
+\renewcommand*{\myoffscreentext}{(E.K.)}% ekster kadro
 \renewcommand*{\myplacesep}{.~}
 \renewcommand*{\mypovtext}{V.P.}% vidpunkto
 \renewcommand*{\mypunctcharA}{:}

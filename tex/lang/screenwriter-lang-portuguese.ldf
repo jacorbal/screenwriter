@@ -1,16 +1,17 @@
-\ProvidesFile{screenwriter-lang-portuguese.ldf}[2026/05/09 v0.1 Portuguese texts]
+\ProvidesFile{screenwriter-lang-portuguese.ldf}[2026/05/10 v1.0 Portuguese texts]
 
 \renewcommand*{\myaddresstext}{Contacto através da agência}
-\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\myadlibtext}{\emph{ad~lib.}}
 \renewcommand*{\mybytext}{por}
 \renewcommand*{\mycontdtext}{(CONT.)}
 \renewcommand*{\myexttext}{EXT}
-\renewcommand*{\myfadeintext}{FADE IN}
-\renewcommand*{\myfadeouttext}{FADE OUT EM PRETO}
-\renewcommand*{\myflashbacktext}{FLASHBACK PARA}
+\renewcommand*{\myfadeintext}{ABRE DE PRETO}
+\renewcommand*{\myfadeouttext}{FUNDIDO EM PRETO}
+\renewcommand*{\myflashbacktext}{ANALEPSE PARA}% Retrospeção para
+\renewcommand*{\myflashforwardtext}{PROLEPSE PARA}
 \renewcommand*{\myintercuttext}{INTERCORTA COM}
 \renewcommand*{\myinttext}{INT}
-\renewcommand*{\mymoretext}{(CONTINUA)}
+\renewcommand*{\mymoretext}{(MAIS)}
 \renewcommand*{\myoffscreentext}{(F.Q.)}% fora de quadro
 \renewcommand*{\myplacesep}{.~}
 \renewcommand*{\mypovtext}{P.D.V.}
@@ -21,4 +22,4 @@
 \renewcommand*{\myslugspace}{ -- }
 \renewcommand*{\mythirtytext}{FIM}
 \renewcommand*{\mytitleovertext}{T\'ITULO SOBRE}
-\renewcommand*{\myvoiceovertext}{(OFF)}
+\renewcommand*{\myvoiceovertext}{(V.S.)}% voz sobreposta

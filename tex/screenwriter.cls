@@ -1,5 +1,5 @@
 %
-% This is file `screenwriter.cls', version 1.0.2 (2026-05-10)
+% This is file `screenwriter.cls', version 1.0.3 (2026-05-10)
 %
 %   Author: J. A. Corbal (jacorbal [at] gmail [dot] net)
 %   Copyright 2013--2026 J. A. Corbal
@@ -12,7 +12,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{screenwriter}[2026/05/10 v1.0.2 Screenwriter class]
+\ProvidesClass{screenwriter}[2026/05/10 v1.0.3 Screenwriter class]
 
 % --- internal language state (default: english)
 \newcommand*{\screenwriter@lang}{english}
@@ -49,6 +49,7 @@
 \newcommand*{\myfadeintext}{FADE IN}
 \newcommand*{\myfadeouttext}{FADE OUT}
 \newcommand*{\myflashbacktext}{FLASHBACK TO}
+\newcommand*{\myflashforwardtext}{FLASHFORWARD TO}
 \newcommand*{\myintercuttext}{INTERCUT WITH}
 \newcommand*{\myinttext}{INT}
 \newcommand*{\mymoretext}{(MORE)}
@@ -357,8 +358,10 @@
 
 \newcommand*{\intercuttext}{\myintercuttext}
 \newcommand*{\flashbacktext}{\myflashbacktext}
+\newcommand*{\flashforwardtext}{\myflashforwardtext}
 \newcommand*{\fadeouttext}{\myfadeouttext}
 
 \newcommand{\intercut}{\RIGHT{\intercuttext}{\punctcharA}}
 \newcommand{\flashback}{\RIGHT{\flashbacktext}{\punctcharA}}
+\newcommand{\flashforward}{\RIGHT{\flashforwardtext}{\punctcharA}}
 \newcommand{\fadeout}{\RIGHT{\fadeouttext}{\punctcharB}}

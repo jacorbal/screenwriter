@@ -1,4 +1,4 @@
-\ProvidesFile{screenwriter-lang-galician.ldf}[2026/05/09 v0.1 Galician texts]
+\ProvidesFile{screenwriter-lang-galician.ldf}[2026/05/10 v1.0 Galician texts]
 
 \renewcommand*{\myaddresstext}{Contacto a través da axencia}
 \renewcommand*{\myadlibtext}{\emph{ad~lib.}}
@@ -8,6 +8,7 @@
 \renewcommand*{\myfadeintext}{ABRE DE NEGRO}
 \renewcommand*{\myfadeouttext}{FUNDE A NEGRO}
 \renewcommand*{\myflashbacktext}{ANALEPSE A}
+\renewcommand*{\myflashforwardtext}{PROLEPSE A}
 \renewcommand*{\myintercuttext}{CORTE CON}
 \renewcommand*{\myinttext}{INT}
 \renewcommand*{\mymoretext}{(M\'AIS)}
