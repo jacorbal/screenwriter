@@ -1,0 +1,24 @@
+\ProvidesFile{screenwriter-lang-german.ldf}[2026/05/09 v0.1 German texts]
+
+\renewcommand*{\myaddresstext}{Kontakt {\"u}ber Agentur}
+\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\mybytext}{von}
+\renewcommand*{\mycontdtext}{(FORTS.)}
+\renewcommand*{\myexttext}{EXT}
+\renewcommand*{\myfadeintext}{AUFBLENDE}
+\renewcommand*{\myfadeouttext}{ABBLENDE AUF SCHWARZ}
+\renewcommand*{\myflashbacktext}{R{\"U}CKBLENDE NACH}
+\renewcommand*{\myintercuttext}{GEGENSCHNITT MIT}
+\renewcommand*{\myinttext}{INT}
+\renewcommand*{\mymoretext}{(MEHR)}
+\renewcommand*{\myoffscreentext}{(A.O.)}% außerhalb des Off/außerhalb des Bildes
+\renewcommand*{\myplacesep}{.~}
+\renewcommand*{\mypovtext}{P.O.V.}
+\renewcommand*{\mypunctcharA}{:}
+\renewcommand*{\mypunctcharB}{:}
+\renewcommand*{\myreverttext}{ZUR{\"U}CK ZU \pov}
+\renewcommand*{\mysepintext}{./}
+\renewcommand*{\myslugspace}{ -- }
+\renewcommand*{\mythirtytext}{ENDE}
+\renewcommand*{\mytitleovertext}{TITEL}
+\renewcommand*{\myvoiceovertext}{(OFF)}

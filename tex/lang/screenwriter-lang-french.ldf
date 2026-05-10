@@ -1,0 +1,24 @@
+\ProvidesFile{screenwriter-lang-french.ldf}[2026/05/09 v0.1 French texts]
+
+\renewcommand*{\myaddresstext}{Contact par l'agence}
+\renewcommand*{\myadlibtext}{ad~lib.}
+\renewcommand*{\mybytext}{de}
+\renewcommand*{\mycontdtext}{(CONT.)}
+\renewcommand*{\myexttext}{EXT}
+\renewcommand*{\myfadeintext}{FONDU D'OUVERTURE}
+\renewcommand*{\myfadeouttext}{FONDU AU NOIR}
+\renewcommand*{\myflashbacktext}{FLASHBACK VERS}
+\renewcommand*{\myintercuttext}{INTERCUT AVEC}
+\renewcommand*{\myinttext}{INT}
+\renewcommand*{\mymoretext}{(SUITE)}
+\renewcommand*{\myoffscreentext}{(HORS CHAMP)}
+\renewcommand*{\myplacesep}{.~}
+\renewcommand*{\mypovtext}{P.D.V.}
+\renewcommand*{\mypunctcharA}{:}
+\renewcommand*{\mypunctcharB}{:}
+\renewcommand*{\myreverttext}{RETOUR AU \pov}
+\renewcommand*{\mysepintext}{./}
+\renewcommand*{\myslugspace}{ -- }
+\renewcommand*{\mythirtytext}{FIN}
+\renewcommand*{\mytitleovertext}{TITRE}
+\renewcommand*{\myvoiceovertext}{(VOIX OFF)}
